@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARCT</title>
+                        <!--Icon Favicon-->
+    <link rel="icon" type="image/png" href="img/favicon (2)/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="img/favicon (2)/favicon.svg" />
+    <link rel="shortcut icon" href="img.favicon (2)/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon (2)/apple-touch-icon.png" />
+    <link rel="manifest" href="img/favicon (2)/site.webmanifest" />
+                        <!--Style-->
+    <link rel="stylesheet" href="style.css">
+                        <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo.svg" alt="ARCT">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <div class="icon-btn">
+                <img src="img/search.svg" alt="search-btn">
+            </div>
+            <div class="icon-btn menu-toggle">☰</div>
+        </div>
+    </header>
+<section class="hero" id="home">
+    <!-- Мобільне меню (сайдбар) -->
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="logo">
+                <img src="img/logo.svg" alt="ARCT">
+            </div>
+            <div class="menu-close">✕</div>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="hero-container">
+        <div class="side-nav">
+            <span class="active">01</span>
+            <span>02</span>
+            <span>03</span>
+        </div>
+
+        <div class="arrows">
+            <div class="arrow arrow-prev">←</div>
+            <div class="arrow arrow-next">→</div>
+        </div>
+
+        <div class="background-image">
+            <img src="img/hero.jpg" alt="">
+        </div>
+
+        <div class="content-wrapper">
+            <h1>Invest In Your Future, Invest With Us</h1>
+            
+            <div class="description-box">
+                <p>
+                    It is a multi-venue performing arts centre at Sydney Harbour located in Sydney, 
+                    New South Wales, Australia. It is one of the 20th century's most famous and 
+                    distinctive buildings.
+                </p>
+                <a href="#" class="view-project">VIEW PROJECT &nbsp; →</a>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- About Me Section -->
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <div class="about-left">
+                <h2 class="about-title">About Me<span class="title-dash">—</span></h2>
+            </div>
+            <div class="about-right">
+                <p class="about-intro">
+                    Viverra senectus lorem ipsum dolor sit adui ultricies dolor. Varius nibh velit pellentesque sapi viverra euen, sapien non senectus odio neque dignissim.
+                </p>
+                <p class="about-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et mauris sed faucibus amet lobortis netus vehicula pretium. Rhoncus laoreet feugiat orci rutrum risus gravida ultricies lacinia faucibus. Mauris ut id scelerisque quis hac luctus nunc. Quis at maecenas velit non. Sit amet, consectetur adipiscing elit. Et mauris sed faucibus amet lobortis netus vehicula pretium. Rhoncus laoreet feugiat orci rutrum risus gravida ultricies lacinia faucibus. Mauris ut id scelerisque quis hac luctus nunc. Quis at maecenas velit non. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+                <p class="about-text">
+                    Et mauris sed faucibus amet lobortis netus vehicula pretium. Rhoncus laoreet feugiat orci rutrum risus gravida ultricies lacinia faucibus. Mauris ut id scelerisque quis hac luctus nunc. Quis at maecenas velit non.
+                </p>
+                <a href="#" class="view-works">VIEW MY WORKS</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section" id="portfolio">
+        <div class="portfolio-container">
+            <div class="portfolio-header">
+                <div class="portfolio-title-wrapper">
+                    <h2 class="portfolio-title">My Portfolio<span class="title-dash">—</span></h2>
+                    <p class="portfolio-description">
+                        Viverra senectus dui ultricies dolor varius nibh velit sapien. sapien pellentesque ue dignissim.
+                    </p>
+                </div>
+                <div class="portfolio-filters">
+                    <button class="filter-btn active" data-filter="all">ALL</button>
+                    <button class="filter-btn" data-filter="houses">HOUSES</button>
+                    <button class="filter-btn" data-filter="buildings">BUILDINGS</button>
+                    <button class="filter-btn" data-filter="hotels">HOTELS</button>
+                    <button class="filter-btn" data-filter="interior">INTERIOR</button>
+                    <button class="filter-btn" data-filter="living-rooms">LIVING ROOMS</button>
+                </div>
+            </div>
+            <div class="portfolio-grid">
+                <!-- 1. Large image (2x2) - Top-left: White hallway with arches -->
+                <div class="portfolio-item large" data-category="interior">
+                    <img src="img/Rectangle 37.jpg" alt="Interior Design">
+                </div>
+                <!-- 2. Small image (1x1) - Top-middle: Modern building corner -->
+                <div class="portfolio-item" data-category="buildings">
+                    <img src="img/Rectangle 38.jpg" alt="Building">
+                </div>
+                <!-- 3. Small image (1x1) - Top-right: White multi-story building -->
+                <div class="portfolio-item" data-category="buildings">
+                    <img src="img/Rectangle 41.jpg" alt="Building">
+                </div>
+                <!-- 4. Small image (1x1) - Middle-left: Interior corridor -->
+                <div class="portfolio-item" data-category="interior">
+                    <img src="img/Rectangle 40.jpg" alt="Interior">
+                </div>
+                <!-- 5. Small image (1x1) - Middle-right: Classic white building -->
+                <div class="portfolio-item" data-category="buildings">
+                    <img src="img/Rectangle 46.jpg" alt="Building">
+                </div>
+                <!-- 6. Small image (1x1) - Bottom-left: Beige residential house -->
+                <div class="portfolio-item" data-category="houses">
+                    <img src="img/Rectangle 53.jpg" alt="House">
+                </div>
+                <!-- 7. Small image (1x1) - Bottom-middle left: Teal building -->
+                <div class="portfolio-item" data-category="buildings">
+                    <img src="img/Rectangle 54.jpg" alt="Building">
+                </div>
+                <!-- 8. Large image (2x2) - Bottom-middle right: Minimalist white house -->
+                <div class="portfolio-item large-bottom" data-category="houses">
+                    <img src="img/Rectangle 52.jpg" alt="House">
+                </div>
+                <!-- 9. Small image (1x1) - Bottom-right: Sydney Opera House -->
+                <div class="portfolio-item" data-category="buildings">
+                    <img src="img/Rectangle 55.jpg" alt="Building">
+                </div>
+                <!-- 10. Small image (1x1) - Bottom: Modern house with pool -->
+                <div class="portfolio-item" data-category="houses">
+                    <img src="img/Rectangle 56.jpg" alt="House">
+                </div>
+                <!-- 11. Small image (1x1) - Bottom: Bedroom interior -->
+                <div class="portfolio-item" data-category="living-rooms">
+                    <img src="img/Rectangle 78.jpg" alt="Bedroom">
+                </div>
+                <!-- 12. Small image (1x1) - Bottom: Living room interior -->
+                <div class="portfolio-item" data-category="living-rooms">
+                    <img src="img/Rectangle 79.jpg" alt="Living Room">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="services-container">
+            <div class="services-header">
+                <h2 class="services-title">View My Services<span class="title-dash">—</span></h2>
+                <p class="services-intro">
+                    Id at urna non viverra ex volutpat porttitor aenean. Viverra senectus dui ultricies dolor. Varius nibh velit pellentesque sapien. sapien neque dignissim.
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Architecture Portfolio</h3>
+                    <p>There are many variations of passages of Lorem Ip sit Ipsum available but the majority have suffered alteration.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Planning Process</h3>
+                    <p>There are many variations of passages of Lorem Ip sit Ipsum available but the majority have suffered alteration.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Unique Design</h3>
+                    <p>There are many variations of passages of Lorem Ip sit Ipsum available but the majority have suffered alteration.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Consultation</h3>
+                    <p>There are many variations of passages of Lorem Ip sit Ipsum available but the majority have suffered alteration.</p>
+                </div>
+            </div>
+            
+            <div class="statistics">
+                <div class="stat-item">
+                    <span class="stat-number">750</span>
+                    <span class="stat-label">PROJECTS DONE</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">315</span>
+                    <span class="stat-label">REGULAR CLIENTS</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">19</span>
+                    <span class="stat-label">YEARS EXPERIENCE</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="testimonials-image">
+          <img src="img/what.jpg" alt="Building">
+        </div>
+      
+        <div class="testimonials-card">
+          <h3>What Clients Says —</h3>
+      
+          <div class="quote">“</div>
+      
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Proin est et nibh eleifend neque ultrices. Sit nulla eget
+            vulputate bibendum sit.
+          </p>
+      
+          <div class="author">
+            <strong>Armando González</strong>
+            <span>CEO, Unity Real Estate</span>
+          </div>
+        </div>
+      </section>
+      
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <div class="faq-left">
+                <h2 class="faq-title">FAQS<span class="title-dash">—</span></h2>
+                <p class="faq-description">
+                    Id at urna non viverra eu volutpat porttitor elementum. 
+                    Viverra senectus dui ultricies dolor.
+                </p>
+            </div>
+            
+            <div class="faq-right">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <h3>What type of projects do you do?</h3>
+                        <span class="faq-icon">−</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nisi, augue urna, mauris elementum ligula 
+                            semper enim. Tristique sed sit facilisis ultrices rhoncus eget ullamcorper tellus.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How much time I will spend on planning?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nisi, augue urna, mauris elementum ligula 
+                            semper enim. Tristique sed sit facilisis ultrices rhoncus eget ullamcorper tellus.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I specify delivery date when ordering?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nisi, augue urna, mauris elementum ligula 
+                            semper enim. Tristique sed sit facilisis ultrices rhoncus eget ullamcorper tellus.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Are there any discounts included?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nisi, augue urna, mauris elementum ligula 
+                            semper enim. Tristique sed sit facilisis ultrices rhoncus eget ullamcorper tellus.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Blog Section -->
+<section class="blog">
+    <div class="blog-container">
+        <div class="blog-header">
+            <h2 class="blog-title">Latest Blog Posts<span class="title-dash">—</span></h2>
+            <p class="blog-description">
+                Id at urna non viverra eu volutpat porttitor elementum. 
+                Viverra senectus dui ultricies dolor.
+            </p>
+        </div>
+
+        <div class="blog-grid">
+            <!-- Blog Card 1 -->
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="img/Rectangle 78.jpg" alt="Modern Vibes Bedrooms">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">Mar 30, 2021</span>
+                    <h3 class="blog-card-title">Modern Vibes Bedrooms, Todays Trending Design</h3>
+                    <p class="blog-excerpt">
+                        Consequat, volutpat morbi tempor elit tellus, ante in mattis. Facilisi morbi ipsum dui aliquet...
+                    </p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+
+            <!-- Blog Card 2 -->
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="img/Rectangle 79.jpg" alt="Minimalist Living Rooms">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">Mar 29, 2021</span>
+                    <h3 class="blog-card-title">How To Make Minimalist Living Rooms Pop-Out</h3>
+                    <p class="blog-excerpt">
+                        Consequat, volutpat morbi tempor elit tellus, ante in mattis. Facilisi morbi ipsum dui aliquet...
+                    </p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+
+            <!-- Blog Card 3 -->
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="img/Rectangle 84.jpg" alt="Resort Design">
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">Mar 27, 2021</span>
+                    <h3 class="blog-card-title">How To Make Your Resort That Looks Outstanding</h3>
+                    <p class="blog-excerpt">
+                        Consequat, volutpat morbi tempor elit tellus, ante in mattis. Facilisi morbi ipsum dui aliquet...
+                    </p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="blog-view-all">
+            <a href="#" class="view-all-blogs">VIEW ALL BLOGS &nbsp; →</a>
+        </div>
+    </div>
+</section>  
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="contact-left">
+                <div class="contact-title-wrapper">
+                    <h2 class="contact-title">Contact Me<span class="title-dash">—</span></h2>
+                    <p class="contact-description">
+                        Get in touch by staying connected with us. If you have any question about our process or company? Let us know how we can help. Feel free to contact us.
+                    </p>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-row">
+                        <input type="text" placeholder="Your First Name*" required>
+                        <input type="text" placeholder="Your Last Name*" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="email" placeholder="Your Email Address*" required>
+                        <input type="tel" placeholder="Your Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message*" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">SUBMIT</button>
+                </form>
+            </div>
+            
+            <div class="contact-right">
+                <img src="img/contact.png" alt="Architecture">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column footer-brand">
+                <div class="footer-logo">
+                    <img src="img/big_logo.svg" alt="ARCT">
+                </div>
+                <p class="footer-description">
+                    Tristique lacus ullamcorper massa posuere nisl molestie. Nullam montes, tortor rhoncus massa. Nisl tellus etiam nec. urna.
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon">
+                        <img src="img/facebook.svg" alt="Facebook">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="img/instagram.svg" alt="Instagram">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="img/twiter.svg" alt="Twitter">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="img/youtube.svg" alt="YouTube">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="img/bee.svg" alt="Behance">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home" class="activet">→ Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolios</a></li>
+                    <li><a href="#portfolio">Blogs</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="footer-title">Contact Info</h3>
+                <ul class="footer-contact">
+                    <li>
+                        <img src="img/map.svg" alt="Location" class="contact-icon">
+                        <span>2489  Locust Court, Los Angeles</span>
+                    </li>
+                    <li>
+                        <img src="img/map.svg" alt="Location" class="contact-icon">
+                        <span>3927  Red Maple Drive, Los Angeles</span>
+                    </li>
+                    <li>
+                        <img src="img/phone.svg" alt="Phone" class="contact-icon">
+                        <span>+63 667 341 3463</span>
+                    </li>
+                    <li>
+                        <img src="img/mail.svg" alt="Email" class="contact-icon">
+                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e2818d8c96838196a296878f928e8396879188978c858e87cc818d8f">[email&#160;protected]</a></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="footer-title">Subscribe Us</h3>
+                <p class="subscribe-text">
+                    Subscribe to our newsletter to stay updated for new products and stunnning news.
+                </p>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Enter Your Email Address" required>
+                    <button type="submit">
+                        SEND <span>→</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="copyright">© 2021 TemplatesJungle. All rights reserved.</p>
+            <p class="designed-by">Designed by <span>TemplatesJungle</span></p>
+        </div>
+    </footer>
+    <!-- JavaScript -->
+    <script src="index.js"></script>
+</body>
+</html>

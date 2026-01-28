@@ -1,0 +1,2927 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    color: #333;
+    padding-top: 0;
+}
+section {
+    margin-left: 45px;
+}
+
+.hero-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    padding-top: 0;
+}
+
+/* Фонове зображення (права частина) */
+.background-image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 65%;
+    height: 100%;
+    background-image: url('ВАШЕ_ПОСИЛАННЯ_НА_ФОТО_БУДИНКУ'); /* ЗАМІНІТЬ ТУТ */
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+/* Навігація */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 60px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo img {
+    height: 50px; /* Налаштуйте під ваш логотип */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.6;
+    transition: opacity 0.3s, font-weight 0.3s;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width 0.4s ease;
+}
+
+nav ul li a:hover {
+    opacity: 1;
+    font-weight: 700;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a.active {
+    opacity: 1;
+    font-weight: 700;
+}
+
+nav ul li a.active::after {
+    width: 100%;
+}
+
+.header-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icon-btn {
+    width: 40px;
+    height: 40px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex !important;
+    }
+}
+
+/* Ліва панель з числами та стрілками */
+.side-nav {
+    position: fixed;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 999;
+}
+
+.side-nav span {
+    font-size: 14px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.side-nav span.active {
+    color: #bfa37e;
+    font-weight: bold;
+}
+
+.arrows {
+    position: fixed;
+    left: 40px;
+    bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 999;
+}
+
+.arrow {
+    width: 45px;
+    height: 45px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.arrow:hover {
+    background: #f5f5f5;
+}
+
+/* Основний текст */
+.content-wrapper {
+    position: relative;
+    z-index: 5;
+    margin-top: 20vh;
+    padding-left: 150px;
+    width: 100%;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    line-height: 1.1;
+    max-width: 600px;
+    color: #222;
+    margin-bottom: 50px;
+}
+
+/* Біла плашка з описом */
+.description-box {
+    background: white;
+    padding: 50px 80px;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+    margin-left: 20px;
+}
+
+.description-box p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #777;
+    max-width: 400px;
+}
+
+.view-project {
+    text-decoration: none;
+    color: #333;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 1px solid #ddd;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    transition: color 0.4s ease;
+    z-index: 1;
+}
+
+.view-project::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #000;
+    transition: width 0.4s ease;
+    z-index: -1;
+}
+
+.view-project:hover {
+    color: white;
+}
+
+.view-project:hover::before {
+    width: 100%;
+}
+
+/* ================================
+   ABOUT ME SECTION
+   ================================ */
+
+.about-section {
+    padding: 100px 80px;
+    background: #fff;
+    max-width: 1400px;
+    margin-top: 240px;
+    
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.about-left {
+    padding-top: 20px;
+}
+
+.about-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    font-weight: 700;
+    color: #222;
+    line-height: 1.2;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 15px;
+}
+
+.title-dash {
+    font-size: 60px;
+    color: #222;
+    font-weight: 400;
+}
+
+.about-right {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.about-intro {
+    font-size: 18px;
+    font-weight: 700;
+    color: #222;
+    line-height: 1.6;
+    max-width: 100%;
+}
+
+.about-text {
+    font-size: 14px;
+    font-weight: 400;
+    color: #777;
+    line-height: 1.8;
+    max-width: 100%;
+}
+
+.view-works {
+    text-decoration: none;
+    color: #333;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 1px solid #ddd;
+    padding: 15px 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    transition: color 0.4s ease;
+    z-index: 1;
+    width: fit-content;
+    margin-top: 10px;
+}
+
+.view-works::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #000;
+    transition: width 0.4s ease;
+    z-index: -1;
+}
+
+.view-works:hover {
+    color: white;
+}
+
+.view-works:hover::before {
+    width: 100%;
+}
+
+/* ================================
+   PORTFOLIO SECTION
+   ================================ */
+
+.portfolio-section {
+    padding: 100px 80px;
+    background: #fff;
+    max-width: 1400px;
+    margin-top: 260px;
+}
+
+.portfolio-container {
+    width: 100%;
+}
+
+.portfolio-header {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    align-items: start;
+    margin-bottom: 60px;
+}
+
+.portfolio-title-wrapper {
+    padding-top: 20px;
+}
+
+.portfolio-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    font-weight: 700;
+    color: #222;
+    line-height: 1.2;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.portfolio-description {
+    font-size: 14px;
+    font-weight: 400;
+    color: #777;
+    line-height: 1.8;
+    max-width: 100%;
+}
+
+.portfolio-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #777;
+    cursor: pointer;
+    padding: 0;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.filter-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width 0.4s ease;
+}
+
+.filter-btn:hover {
+    color: #000;
+}
+
+.filter-btn:hover::after {
+    width: 100%;
+}
+
+.filter-btn.active {
+    color: #000;
+}
+
+.filter-btn.active::after {
+    width: 100%;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    grid-auto-rows: minmax(250px, auto);
+    grid-template-areas: 
+        "large large small1"
+        "large large small2"
+        "small3 small4 small5"
+        "small6 small7 large2"
+        "small8 small9 large2";
+}
+
+.portfolio-item {
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    background: #f5f5f5;
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.4s ease, transform 0.4s ease, filter 0.4s ease;
+    min-height: 250px;
+}
+
+/* Затемнення неактивних фото */
+.portfolio-item.dimmed {
+    filter: brightness(0.5) grayscale(0.3);
+    opacity: 0.6;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    display: block;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Перше велике зображення (2x2) - Top-left: White hallway */
+.portfolio-item.large {
+    grid-area: large;
+    min-height: 520px;
+}
+
+/* Друге зображення (1x1) - Top-middle: Modern building corner */
+.portfolio-item:nth-child(2) {
+    grid-area: small1;
+}
+
+/* Третє зображення (1x1) - Top-right: White multi-story building */
+.portfolio-item:nth-child(3) {
+    grid-area: small2;
+}
+
+/* Четверте зображення (1x1) - Middle-left: Interior corridor */
+.portfolio-item:nth-child(4) {
+    grid-area: small3;
+}
+
+/* П'яте зображення (1x1) - Middle-right: Classic white building */
+.portfolio-item:nth-child(5) {
+    grid-area: small4;
+}
+
+/* Шосте зображення (1x1) - Bottom-left: Beige residential house */
+.portfolio-item:nth-child(6) {
+    grid-area: small5;
+}
+
+/* Сьоме зображення (1x1) - Bottom-middle left: Teal building */
+.portfolio-item:nth-child(7) {
+    grid-area: small6;
+}
+
+/* Восьме велике зображення (2x2) - Bottom-middle right: Minimalist white house */
+.portfolio-item.large-bottom {
+    grid-area: large2;
+    min-height: 520px;
+}
+
+/* Дев'яте зображення (1x1) - Bottom-right: Sydney Opera House */
+.portfolio-item:nth-child(9) {
+    grid-area: small9;
+}
+
+/* ================================
+   МОБІЛЬНЕ МЕНЮ (САЙДБАР)
+   ================================ */
+
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    max-width: 85%;
+    height: 100%;
+    background: #fff;
+    z-index: 1002;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.mobile-menu-header .logo img {
+    height: 40px;
+}
+
+.menu-close {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.menu-close:hover {
+    background: #f5f5f5;
+}
+
+.mobile-nav {
+    padding: 20px 0;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-nav ul li {
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.mobile-nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background 0.3s, color 0.3s;
+    position: relative;
+}
+
+.mobile-nav ul li a:hover {
+    background: #f9f9f9;
+    color: #000;
+}
+
+.mobile-nav ul li a.active {
+    color: #000;
+    font-weight: 700;
+    background: #f9f9f9;
+}
+
+.mobile-nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #000;
+}
+
+/* ================================
+   АДАПТИВНА ВЕРСТКА
+   ================================ */
+
+/* Великі планшети та невеликі ноутбуки (до 1200px) */
+@media (max-width: 1200px) {
+    header {
+        padding: 30px 50px;
+    }
+
+    h1 {
+        font-size: 60px;
+        max-width: 500px;
+    }
+
+    .content-wrapper {
+        padding-left: 120px;
+        margin-top: 12vh;
+    }
+
+    .description-box {
+        padding: 40px 60px;
+        max-width: 700px;
+    }
+
+    .background-image {
+        width: 60%;
+    }
+
+    .about-section {
+        padding: 80px 60px;
+    }
+
+    .about-container {
+        gap: 60px;
+    }
+
+    .about-title {
+        font-size: 50px;
+    }
+
+    .title-dash {
+        font-size: 50px;
+    }
+
+    .portfolio-section {
+        padding: 80px 60px;
+    }
+
+    .portfolio-header {
+        gap: 60px;
+    }
+
+    .portfolio-title {
+        font-size: 50px;
+    }
+
+    .portfolio-grid {
+        gap: 15px;
+    }
+}
+
+/* Планшети (до 992px) */
+@media (max-width: 992px) {
+    header {
+        padding: 25px 40px;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    nav ul {
+        gap: 20px;
+    }
+
+    nav ul li a {
+        font-size: 13px;
+    }
+
+    h1 {
+        font-size: 50px;
+        max-width: 450px;
+        margin-bottom: 40px;
+    }
+
+    .content-wrapper {
+        padding-left: 100px;
+        margin-top: 10vh;
+    }
+
+    .description-box {
+        padding: 35px 50px;
+        max-width: 600px;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .description-box p {
+        max-width: 100%;
+    }
+
+    .background-image {
+        width: 55%;
+    }
+
+    .side-nav {
+        left: 30px;
+    }
+
+    .arrows {
+        left: 30px;
+        bottom: 60px;
+    }
+
+    .about-section {
+        padding: 60px 50px;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr 1.8fr;
+        gap: 50px;
+    }
+
+    .about-title {
+        font-size: 45px;
+    }
+
+    .title-dash {
+        font-size: 45px;
+    }
+
+    .about-intro {
+        font-size: 16px;
+    }
+
+    .portfolio-section {
+        padding: 60px 50px;
+    }
+
+    .portfolio-header {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .portfolio-filters {
+        justify-content: flex-start;
+        gap: 25px;
+    }
+
+    .portfolio-title {
+        font-size: 45px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .portfolio-item.large {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+}
+
+/* Малі планшети та великі телефони (до 768px) */
+@media (max-width: 768px) {
+    header {
+        padding: 20px 30px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .header-icons .icon-btn:first-child {
+        display: none;
+    }
+
+    h1 {
+        font-size: 40px;
+        max-width: 350px;
+        margin-bottom: 30px;
+    }
+
+    .content-wrapper {
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-top: 18vh;
+    }
+
+    .description-box {
+        padding: 30px 40px;
+        margin-left: 0;
+        max-width: 100%;
+    }
+
+    .description-box p {
+        font-size: 13px;
+    }
+
+    .view-project {
+        font-size: 11px;
+        padding: 12px 25px;
+    }
+
+    .background-image {
+        width: 100%;
+        opacity: 0.3;
+    }
+
+    .side-nav {
+        left: 20px;
+        gap: 15px;
+    }
+
+    .side-nav span {
+        font-size: 12px;
+    }
+
+    .arrows {
+        left: 20px;
+        bottom: 40px;
+    }
+
+    .arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    .about-section {
+        padding: 50px 30px;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-title {
+        font-size: 40px;
+    }
+
+    .title-dash {
+        font-size: 40px;
+    }
+
+    .about-intro {
+        font-size: 15px;
+    }
+
+    .about-text {
+        font-size: 13px;
+    }
+
+    .view-works {
+        font-size: 11px;
+        padding: 12px 25px;
+    }
+
+    .portfolio-section {
+        padding: 50px 30px;
+    }
+
+    .portfolio-header {
+        gap: 30px;
+    }
+
+    .portfolio-title {
+        font-size: 40px;
+    }
+
+    .portfolio-filters {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .filter-btn {
+        font-size: 11px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas: none;
+        gap: 15px;
+    }
+
+    .portfolio-item.large,
+    .portfolio-item.large-bottom {
+        grid-column: span 1;
+        grid-row: span 1;
+        min-height: 250px;
+    }
+
+    .portfolio-item:nth-child(n) {
+        grid-area: auto;
+    }
+}
+
+/* Телефони (до 576px) */
+@media (max-width: 576px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    .logo img {
+        height: 35px;
+    }
+
+    .icon-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 32px;
+        max-width: 280px;
+        line-height: 1.2;
+        margin-bottom: 25px;
+    }
+
+    .content-wrapper {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 15vh;
+    }
+
+    .description-box {
+        padding: 25px 30px;
+        gap: 20px;
+    }
+
+    .description-box p {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .view-project {
+        font-size: 10px;
+        padding: 10px 20px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .side-nav {
+        left: 15px;
+        gap: 12px;
+    }
+
+    .side-nav span {
+        font-size: 11px;
+    }
+
+    .arrows {
+        left: 15px;
+        bottom: 30px;
+        gap: 8px;
+    }
+
+    .arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .about-section {
+        padding: 40px 20px;
+    }
+
+    .about-container {
+        gap: 30px;
+    }
+
+    .about-title {
+        font-size: 32px;
+    }
+
+    .title-dash {
+        font-size: 32px;
+    }
+
+    .about-intro {
+        font-size: 14px;
+    }
+
+    .about-text {
+        font-size: 12px;
+    }
+
+    .view-works {
+        font-size: 10px;
+        padding: 10px 20px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .portfolio-section {
+        padding: 40px 20px;
+    }
+
+    .portfolio-title {
+        font-size: 32px;
+    }
+
+    .portfolio-description {
+        font-size: 13px;
+    }
+
+    .portfolio-filters {
+        gap: 15px;
+    }
+
+    .filter-btn {
+        font-size: 10px;
+    }
+
+    .portfolio-grid {
+        gap: 12px;
+    }
+}
+
+/* Дуже малі телефони (до 400px) */
+@media (max-width: 400px) {
+    header {
+        padding: 15px 15px;
+    }
+
+    .logo img {
+        height: 30px;
+    }
+
+    h1 {
+        font-size: 28px;
+        max-width: 250px;
+    }
+
+    .content-wrapper {
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-top: 12vh;
+    }
+
+    .description-box {
+        padding: 20px 25px;
+    }
+
+    .description-box p {
+        font-size: 11px;
+    }
+
+    .view-project {
+        font-size: 9px;
+        padding: 8px 15px;
+    }
+
+    .side-nav {
+        left: 10px;
+    }
+
+    .arrows {
+        left: 10px;
+        bottom: 25px;
+    }
+
+    .arrow {
+        width: 32px;
+        height: 32px;
+    }
+
+    .about-section {
+        padding: 30px 15px;
+    }
+
+    .about-title {
+        font-size: 28px;
+    }
+
+    .title-dash {
+        font-size: 28px;
+    }
+
+    .about-intro {
+        font-size: 13px;
+    }
+
+    .about-text {
+        font-size: 11px;
+    }
+
+    .view-works {
+        font-size: 9px;
+        padding: 8px 15px;
+    }
+
+    .portfolio-section {
+        padding: 30px 15px;
+    }
+
+    .portfolio-title {
+        font-size: 28px;
+    }
+
+    .portfolio-description {
+        font-size: 12px;
+    }
+
+    .portfolio-filters {
+        gap: 12px;
+    }
+
+    .filter-btn {
+        font-size: 9px;
+    }
+}
+
+/* Ландшафтна орієнтація на мобільних */
+@media (max-height: 600px) and (orientation: landscape) {
+    .content-wrapper {
+        margin-top: 8vh;
+    }
+
+    h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .description-box {
+        padding: 20px 30px;
+    }
+
+    .arrows {
+        bottom: 20px;
+    }
+}
+/* ================================
+   SERVICES SECTION
+   ================================ */
+
+.services-section {
+    padding: 120px 80px;
+    background: #f8f8f8;
+    max-width: 1400px;
+    margin-top: 200px;
+}
+
+.services-container {
+    width: 100%;
+}
+
+.services-header {
+    max-width: 600px;
+    margin-bottom: 80px;
+}
+
+.services-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    font-weight: 700;
+    color: #222;
+    line-height: 1.2;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.services-intro {
+    font-size: 14px;
+    font-weight: 400;
+    color: #777;
+    line-height: 1.8;
+    max-width: 500px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-bottom: 100px;
+}
+
+.service-card {
+    background: transparent;
+    padding: 0;
+}
+
+.service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.service-card p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #777;
+    line-height: 1.8;
+}
+
+.statistics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    padding-top: 60px;
+    border-top: 1px solid #ddd;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    font-weight: 400;
+    color: rgba(200, 200, 200, 0.4);
+    line-height: 1;
+    letter-spacing: -3px;
+}
+
+.stat-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #444;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* RESPONSIVE FOR SERVICES SECTION */
+
+/* Планшети (до 1024px) */
+@media (max-width: 1024px) {
+    .services-section {
+        padding: 80px 50px;
+        margin-top: 150px;
+    }
+
+    .services-header {
+        margin-bottom: 60px;
+    }
+
+    .services-title {
+        font-size: 45px;
+    }
+
+    .services-grid {
+        gap: 35px;
+        margin-bottom: 80px;
+    }
+
+    .service-card h3 {
+        font-size: 22px;
+    }
+
+    .stat-number {
+        font-size: 100px;
+    }
+
+    .statistics {
+        gap: 50px;
+    }
+}
+
+/* Малі планшети (до 768px) */
+@media (max-width: 768px) {
+    .services-section {
+        padding: 60px 30px;
+        margin-top: 100px;
+    }
+
+    .services-header {
+        margin-bottom: 50px;
+    }
+
+    .services-title {
+        font-size: 40px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 70px;
+    }
+
+    .service-card h3 {
+        font-size: 20px;
+    }
+
+    .statistics {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .stat-number {
+        font-size: 80px;
+    }
+}
+
+/* Телефони (до 576px) */
+@media (max-width: 576px) {
+    .services-section {
+        padding: 50px 20px;
+        margin-top: 80px;
+    }
+
+    .services-header {
+        margin-bottom: 40px;
+    }
+
+    .services-title {
+        font-size: 32px;
+    }
+
+    .services-intro {
+        font-size: 13px;
+    }
+
+    .services-grid {
+        gap: 35px;
+        margin-bottom: 60px;
+    }
+
+    .service-card h3 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .service-card p {
+        font-size: 13px;
+    }
+
+    .stat-number {
+        font-size: 70px;
+    }
+
+    .stat-label {
+        font-size: 10px;
+    }
+}
+/* ================================
+   TESTIMONIALS SECTION
+   ================================ */
+
+   .testimonials {
+    width: 100%;
+    height: 800px;
+    margin-top: 195px;
+    background: #fff; /* білий фон */
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .testimonials-image {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .testimonials-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* щоб фото не тягнулося */
+  }
+  
+  
+  .testimonials-card {
+    width: 720px;      /* як у макетах */
+    height: 520px;
+    background: #fff;
+    padding: 80px;
+    position: absolute;
+    right: 150px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  }
+  
+  
+  .testimonials-card h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .quote {
+    font-size: 80px;
+    color: #eee;
+    line-height: 1;
+  }
+  
+  .testimonials-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  
+  .author strong {
+    display: block;
+    font-size: 16px;
+  }
+  
+  .author span {
+    font-size: 14px;
+    color: #777;
+  }
+  @media (max-width: 900px) {
+    .testimonials {
+      flex-direction: column;
+    }
+  
+    .testimonials-card {
+      margin-left: 0;
+      margin-top: -60px;
+    }
+  
+    .testimonials-image img {
+      width: 100%;
+    }
+  }
+    
+
+/* RESPONSIVE FOR TESTIMONIALS SECTION */
+
+/* Планшети (до 1024px) */
+@media (max-width: 1024px) {
+    .testimonials-section {
+        margin-top: 150px;
+    }
+
+    .testimonials-container {
+        min-height: 500px;
+    }
+
+    .testimonial-content-box {
+        padding: 60px 70px;
+    }
+
+    .testimonial-title {
+        font-size: 40px;
+    }
+
+    .quote-mark {
+        font-size: 160px;
+        left: -20px;
+    }
+
+    .testimonial-text {
+        font-size: 15px;
+    }
+}
+
+/* Малі планшети та мобільні (до 768px) */
+@media (max-width: 768px) {
+    .testimonials-section {
+        margin-top: 100px;
+    }
+
+    .testimonials-container {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .testimonial-image {
+        min-height: 400px;
+    }
+
+    .testimonial-content-box {
+        padding: 50px 40px;
+    }
+
+    .testimonial-title {
+        font-size: 36px;
+    }
+
+    .quote-mark {
+        font-size: 140px;
+        left: -15px;
+        top: 15px;
+    }
+
+    .testimonial-text {
+        font-size: 14px;
+    }
+
+    .testimonial-author h4 {
+        font-size: 18px;
+    }
+}
+
+/* Телефони (до 576px) */
+@media (max-width: 576px) {
+    .testimonials-section {
+        margin-top: 80px;
+    }
+
+    .testimonial-image {
+        min-height: 300px;
+    }
+
+    .testimonial-content-box {
+        padding: 40px 25px;
+    }
+
+    .testimonial-title {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    .quote-mark {
+        font-size: 120px;
+        left: -10px;
+        top: 10px;
+    }
+
+    .testimonial-text {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .testimonial-author {
+        margin-bottom: 25px;
+    }
+
+    .testimonial-author h4 {
+        font-size: 16px;
+    }
+
+    .testimonial-author p {
+        font-size: 12px;
+    }
+
+    .testimonial-dots {
+        gap: 10px;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .dot.active {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* Дуже малі телефони (до 400px) */
+@media (max-width: 400px) {
+    .testimonial-image {
+        min-height: 250px;
+    }
+
+    .testimonial-content-box {
+        padding: 35px 20px;
+    }
+
+    .testimonial-title {
+        font-size: 26px;
+    }
+
+    .quote-mark {
+        font-size: 100px;
+    }
+
+    .testimonial-text {
+        font-size: 12px;
+    }
+}
+/* ================================
+   FAQ SECTION
+   ================================ */
+
+.faq-section {
+    padding: 120px 80px;
+    background: #fff;
+    max-width: 1400px;
+    margin-top: 200px;
+}
+
+.faq-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.faq-left {
+    padding-top: 20px;
+}
+
+.faq-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    font-weight: 700;
+    color: #222;
+    line-height: 1.2;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.faq-description {
+    font-size: 14px;
+    font-weight: 400;
+    color: #777;
+    line-height: 1.8;
+    max-width: 400px;
+}
+
+.faq-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.faq-item {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 30px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.faq-question h3 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #222;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.faq-icon {
+    font-size: 28px;
+    font-weight: 300;
+    color: #222;
+    min-width: 30px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding-top 0.4s ease;
+}
+
+.faq-answer p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #777;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+    padding-top: 20px;
+}
+
+.faq-item:hover .faq-question h3 {
+    color: #bfa37e;
+}
+
+/* RESPONSIVE FOR FAQ SECTION */
+
+/* Планшети (до 1024px) */
+@media (max-width: 1024px) {
+    .faq-section {
+        padding: 80px 50px;
+        margin-top: 150px;
+    }
+
+    .faq-container {
+        gap: 60px;
+    }
+
+    .faq-title {
+        font-size: 45px;
+    }
+}
+
+/* Малі планшети та мобільні (до 768px) */
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 60px 30px;
+        margin-top: 100px;
+    }
+
+    .faq-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .faq-title {
+        font-size: 40px;
+    }
+
+    .faq-description {
+        max-width: 100%;
+    }
+
+    .faq-question h3 {
+        font-size: 16px;
+    }
+
+    .faq-icon {
+        font-size: 24px;
+    }
+}
+
+/* Телефони (до 576px) */
+@media (max-width: 576px) {
+    .faq-section {
+        padding: 50px 20px;
+        margin-top: 80px;
+    }
+
+    .faq-container {
+        gap: 30px;
+    }
+
+    .faq-title {
+        font-size: 32px;
+    }
+
+    .faq-description {
+        font-size: 13px;
+    }
+
+    .faq-item {
+        padding: 20px 0;
+    }
+
+    .faq-question {
+        gap: 20px;
+    }
+
+    .faq-question h3 {
+        font-size: 15px;
+    }
+
+    .faq-answer p {
+        font-size: 13px;
+    }
+
+    .faq-icon {
+        font-size: 22px;
+        min-width: 25px;
+    }
+}
+
+/* ================================
+   BLOG SECTION
+   ================================ */
+
+/* ================================
+   BLOG SECTION - Updated to match photo
+   ================================ */
+
+   .blog-section {
+    padding: 120px 80px;
+    background: #fff;
+    max-width: 1400px;
+    margin-top: 200px;
+    position: relative;
+}
+
+.blog-container {
+    width: 100%;
+}
+
+.blog-header {
+    max-width: 600px;
+    margin-bottom: 80px;
+}
+
+.blog-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    font-weight: 700;
+    color: #222;
+    line-height: 1.2;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.blog-description {
+    font-size: 14px;
+    font-weight: 400;
+    color: #777;
+    line-height: 1.8;
+    max-width: 500px;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.blog-card {
+    background: #fff;
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+    height: 400px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+.blog-image {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    position: relative;
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-image img {
+    transform: scale(1.05);
+}
+
+.blog-content {
+    position: absolute;
+    top: 190px;
+    left: 30px;
+    right: 30px;
+    background: white;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    min-height: 210px;
+}
+
+.blog-date {
+    font-size: 12px;
+    font-weight: 400;
+    color: #999;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.blog-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.blog-card:hover .blog-card-title {
+    color: #bfa37e;
+}
+
+.blog-excerpt {
+    font-size: 14px;
+    font-weight: 400;
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.read-more {
+    text-decoration: none;
+    color: #333;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-style: italic;
+    position: relative;
+    padding-bottom: 3px;
+    display: inline-block;
+}
+
+.read-more::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #333;
+    transition: width 0.3s ease;
+}
+
+.read-more:hover::after {
+    width: 100%;
+}
+
+/* Тінь під блоком контенту */
+.blog-content::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.03) 0%, rgba(0,0,0,0) 100%);
+    z-index: -1;
+}
+
+.blog-view-all {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.view-all-blogs {
+    text-decoration: none;
+    color: #333;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 1px solid #ddd;
+    padding: 18px 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    transition: color 0.4s ease;
+    z-index: 1;
+}
+
+.view-all-blogs::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #000;
+    transition: width 0.4s ease;
+    z-index: -1;
+}
+
+.view-all-blogs:hover {
+    color: white;
+}
+
+.view-all-blogs:hover::before {
+    width: 100%;
+}
+
+/* РЕСПОНСИВНІСТЬ */
+@media (max-width: 1024px) {
+    .blog-section {
+        padding: 80px 50px;
+        margin-top: 150px;
+    }
+    
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+    
+    .blog-card {
+        height: 380px;
+    }
+    
+    .blog-content {
+        top: 180px;
+        left: 25px;
+        right: 25px;
+        padding: 25px;
+        min-height: 200px;
+    }
+    
+    .blog-image {
+        height: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-section {
+        padding: 60px 30px;
+        margin-top: 100px;
+    }
+    
+    .blog-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 60px;
+    }
+    
+    .blog-card {
+        height: 400px;
+    }
+    
+    .blog-image {
+        height: 240px;
+    }
+    
+    .blog-content {
+        top: 190px;
+        left: 30px;
+        right: 30px;
+        padding: 30px;
+    }
+    
+    .blog-card-title {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 576px) {
+    .blog-section {
+        padding: 50px 20px;
+        margin-top: 80px;
+    }
+    
+    .blog-card {
+        height: 380px;
+    }
+    
+    .blog-image {
+        height: 220px;
+    }
+    
+    .blog-content {
+        top: 180px;
+        left: 20px;
+        right: 20px;
+        padding: 25px;
+        min-height: 190px;
+    }
+    
+    .blog-card-title {
+        font-size: 20px;
+    }
+    
+    .blog-excerpt {
+        font-size: 13px;
+    }
+}
+
+/* RESPONSIVE FOR BLOG SECTION */
+
+/* Планшети (до 1024px) */
+@media (max-width: 1024px) {
+    .blog-section {
+        padding: 80px 50px;
+        margin-top: 150px;
+    }
+
+    .blog-header {
+        margin-bottom: 60px;
+    }
+
+    .blog-title {
+        font-size: 45px;
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+        margin-bottom: 60px;
+    }
+
+    .blog-image {
+        height: 250px;
+    }
+}
+
+/* Малі планшети (до 768px) */
+@media (max-width: 768px) {
+    .blog-section {
+        padding: 60px 30px;
+        margin-top: 100px;
+    }
+
+    .blog-header {
+        margin-bottom: 50px;
+    }
+
+    .blog-title {
+        font-size: 40px;
+    }
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        margin-bottom: 50px;
+    }
+
+    .blog-image {
+        height: 280px;
+    }
+
+    .blog-card-title {
+        font-size: 20px;
+    }
+}
+
+/* Телефони (до 576px) */
+@media (max-width: 576px) {
+    .blog-section {
+        padding: 50px 20px;
+        margin-top: 80px;
+    }
+
+    .blog-header {
+        margin-bottom: 40px;
+    }
+
+    .blog-title {
+        font-size: 32px;
+    }
+
+    .blog-description {
+        font-size: 13px;
+    }
+
+    .blog-grid {
+        gap: 40px;
+    }
+
+    .blog-image {
+        height: 220px;
+        margin-bottom: 20px;
+    }
+
+    .blog-card-title {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .blog-excerpt {
+        font-size: 13px;
+    }
+
+    .view-all-blogs {
+        padding: 15px 30px;
+        font-size: 11px;
+    }
+}
+
+/* Дуже малі телефони (до 400px) */
+@media (max-width: 400px) {
+    .blog-image {
+        height: 200px;
+    }
+
+    .blog-card-title {
+        font-size: 17px;
+    }
+}
+
+
+/* ================================
+   CONTACT SECTION - оновлена версія
+   ================================ */
+
+   .contact-section {
+    padding: 0;
+    background: #f8f8f8;
+    margin-top: 200px;
+    position: relative;
+    overflow: hidden; /* змінено з visible */
+    height: 800px; /* фіксована висота як на фото */
+}
+
+.contact-container {
+    display: flex;
+    position: relative;
+    height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.contact-left {
+    background: #fff; /* білий фон для форми */
+    padding: 100px 80px;
+    width: 50%;
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    margin-left: 80px; /* відступ зліва */
+}
+
+.contact-title-wrapper {
+    margin-bottom: 50px;
+}
+
+.contact-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    font-weight: 700;
+    color: #222;
+    line-height: 1.2;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.contact-description {
+    font-size: 14px;
+    font-weight: 400;
+    color: #777;
+    line-height: 1.8;
+    max-width: 450px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 18px 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    font-family: 'Work Sans', sans-serif;
+    transition: border-color 0.3s ease;
+    outline: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-bottom-color: #bfa37e;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.submit-btn {
+    background: #000;
+    color: white;
+    border: none;
+    padding: 18px 50px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    width: fit-content;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #333;
+}
+
+.contact-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 70%; /* ширина фото */
+    height: 100%;
+    overflow: hidden;
+}
+
+.contact-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Responsive for Contact Section */
+@media (max-width: 1200px) {
+    .contact-left {
+        width: 45%;
+        margin-left: 40px;
+        padding: 80px 60px;
+    }
+    
+    .contact-right {
+        width: 75%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .contact-section {
+        margin-top: 150px;
+        height: 700px;
+    }
+    
+    .contact-left {
+        width: 50%;
+        padding: 60px 50px;
+        margin-left: 30px;
+    }
+    
+    .contact-title {
+        font-size: 45px;
+    }
+    
+    .contact-right {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        margin-top: 100px;
+        height: auto;
+        padding-bottom: 0;
+    }
+    
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .contact-left {
+        position: relative;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 60px 30px;
+        transform: none;
+        top: 0;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .contact-right {
+        position: relative;
+        width: 100%;
+        height: 400px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-section {
+        margin-top: 80px;
+    }
+    
+    .contact-left {
+        padding: 50px 20px;
+    }
+    
+    .contact-title {
+        font-size: 32px;
+        gap: 10px;
+    }
+    
+    .title-dash {
+        font-size: 32px;
+    }
+    
+    .contact-description {
+        font-size: 13px;
+    }
+    
+    .contact-right {
+        height: 350px;
+    }
+    
+    .submit-btn {
+        width: 100%;
+        padding: 16px 30px;
+    }
+}
+/* Responsive for Contact Section */
+@media (max-width: 1024px) {
+    .contact-section {
+        margin-top: 150px;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .contact-left {
+        padding: 80px 50px;
+    }
+
+    .contact-title {
+        font-size: 45px;
+    }
+
+    .contact-right {
+        min-height: 500px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        margin-top: 100px;
+    }
+
+    .contact-left {
+        padding: 60px 30px;
+    }
+
+    .contact-title {
+        font-size: 40px;
+    }
+
+    .contact-description {
+        font-size: 13px;
+    }
+
+    .contact-right {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-section {
+        margin-top: 80px;
+    }
+
+    .contact-left {
+        padding: 50px 20px;
+    }
+
+    .contact-title {
+        font-size: 32px;
+        gap: 10px;
+    }
+
+    .title-dash {
+        font-size: 32px;
+    }
+
+    .contact-description {
+        font-size: 13px;
+    }
+
+    .contact-right {
+        min-height: 350px;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 16px 30px;
+    }
+}
+/* ================================
+   FOOTER SECTION
+   ================================ */
+
+.footer {
+    background: #E8E8E8;
+    padding: 100px 80px 0;
+    margin-top: 200px;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 1fr 1fr;
+    gap: 80px;
+    padding-bottom: 80px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer Brand Column */
+.footer-brand {
+    padding-right: 20px;
+}
+
+.footer-logo {
+    margin-bottom: 30px;
+}
+
+.footer-logo img {
+    height: 50px;
+}
+
+.footer-description {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-icon img {
+    width: 16px;
+    height: 16px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #000;
+}
+
+.social-icon:hover img {
+    opacity: 1;
+    filter: brightness(0) invert(1);
+}
+
+/* Footer Title */
+.footer-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 30px;
+}
+
+/* Quick Links */
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-links li a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #777;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+    display: inline-block;
+    position: relative;
+    padding-bottom: 3px;
+}
+
+.footer-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width 0.4s ease;
+}
+
+.footer-links li a:hover {
+    color: #000;
+    font-weight: 600;
+}
+
+.footer-links li a:hover::after {
+    width: 100%;
+}
+
+.footer-links li a.active {
+    color: #000;
+    font-weight: 600;
+}
+
+.footer-links li a.active::after {
+    width: 100%;
+}
+
+/* Contact Info */
+.footer-contact {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-contact li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.6;
+}
+
+.contact-icon {
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
+    opacity: 0.6;
+}
+
+/* Subscribe Form */
+.subscribe-text {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.subscribe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.subscribe-form input {
+    width: 100%;
+    padding: 15px 0;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    background: transparent;
+    font-size: 14px;
+    color: #333;
+    font-family: 'Work Sans', sans-serif;
+    transition: border-color 0.3s ease;
+    outline: none;
+}
+
+.subscribe-form input::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.subscribe-form input:focus {
+    border-bottom-color: #000;
+}
+
+.subscribe-form button {
+    background: #000;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.subscribe-form button:hover {
+    background: #333;
+    transform: translateX(5px);
+}
+
+.subscribe-form button span {
+    font-size: 16px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+    font-size: 13px;
+    color: #777;
+}
+
+.copyright {
+    margin: 0;
+}
+
+.designed-by {
+    margin: 0;
+}
+
+.designed-by span {
+    color: #000;
+    font-weight: 600;
+}
+
+/* Responsive для Footer */
+@media (max-width: 1200px) {
+    .footer {
+        padding: 80px 60px 0;
+    }
+
+    .footer-container {
+        gap: 60px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .footer {
+        padding: 80px 50px 0;
+        margin-top: 150px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        padding-bottom: 60px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 60px 30px 0;
+        margin-top: 100px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding-bottom: 50px;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 30px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer {
+        padding: 50px 20px 0;
+        margin-top: 80px;
+    }
+
+    .footer-title {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .footer-description,
+    .subscribe-text {
+        font-size: 13px;
+    }
+
+    .footer-social {
+        gap: 12px;
+    }
+
+    .social-icon {
+    width: 50px;
+    height: 50px;
+    }
+
+    .subscribe-form button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+/* Додаткова анімація для активних посилань */
+nav ul li a.active,
+.mobile-nav ul li a.active,
+.footer-links li a.active {
+    animation: pulseActive 0.5s ease-in-out;
+}
+
+@keyframes pulseActive {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Плавна поява підкреслення */
+nav ul li a::after,
+.footer-links li a::after {
+    transform-origin: left;
+}
+
+/* Scroll padding для правильного позиціонування при прокрутці */
+html {
+    scroll-padding-top: 100px;
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 80px;
+}
